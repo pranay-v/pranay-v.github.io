@@ -6,13 +6,12 @@
     <link rel="stylesheet" href="./myself.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-
     </style>
 </head>
 
 <body>
     <div class="overall-wrapper">
-        <section class="sec1" onmouseleave="normal()">
+        <section class="sec1">
 
             <!--<button  class = "link_but" id = "butid" onclick="displayall(this.id)">Click to Be Dazzled</button>-->
             <div class="secover">
@@ -35,15 +34,35 @@
                     <a href="https://github.com/pranay-v" target="_blank"><i class="fa fa-github fa-1.5x"
                             aria-hidden="true"></i></a>
                 </div>
+                <div class = "mobpart" style = "display:none">
+                <div class="aclass">
+                    <a href="#s1" target="_blank"><i class="fa fa-github fa-1.5x"
+                            aria-hidden="true"></i></a>
+                </div>
+                <div class="aclass">
+                    <a href="#s2" target="_blank"><i class="fa fa-github fa-1.5x"
+                            aria-hidden="true"></i></a>
+                </div>
+                <div class="aclass">
+                    <a href="#s3" target="_blank"><i class="fa fa-github fa-1.5x"
+                            aria-hidden="true"></i></a>
+                </div>
+                <div class="aclass">
+                    <a href="#s4" target="_blank"><i class="fa fa-github fa-1.5x"
+                            aria-hidden="true"></i></a>
+                </div>
+            </div>
             </div>
         </section>
         <section class="sec2">
+            <button class="link_but" id="mobbut" onmouseover="displayall(this.id)" style="width:10%;"><img
+                src="./hamb.png" style="height:1.5em;width:auto;"/></button>
             <div class="links">
                 <!--<div class="link-container" style="border-left:4px solid black">*/
                     <center></center>
                 </div>-->
                 <button class="link_but" id="butid" onmouseover="displayall(this.id)" style="width:10%"><img
-                        src="./hamb.png" style="height:1.5em;width:auto;" /></button>
+                        src="./hamb.png" style="height:1.5em;width:auto;"/></button>
                 <a href="#s1">About Me</a>
                 <!--<span>|</span>
                 <div class="link-container">
@@ -175,8 +194,11 @@
             document.querySelector(".secover").style.zIndex = "0.5";
             document.querySelector(".secover").style.transform = "scaleX(0)";
             document.querySelector(".sec2").style.position = "static";
-            document.querySelector("#butid").style.display = "block";
             document.querySelector(".sec2").style.opacity = "1";
+            if(document.documentElement.clientWidth <= 767)
+            document.querySelector("#mobbut").style.display = "block";
+            else
+            document.querySelector("#butid").style.display = "block";
             let navb = document.querySelector(".links");
             const as = navb.querySelectorAll("a");//[0].style.width = "25%";
             as.forEach(anch => anch.style.width = "22.5%");
@@ -202,7 +224,15 @@
                 document.querySelector(".sec2").style.position = "fixed";
                 document.querySelector(".sec1").style.display = "block";
                 /*document.querySelector(".sec1").style.backgroundColor = "black";*/
+                if(document.documentElement.clientWidth <= 767)
+            {document.querySelector(".mobpart").style.display = "block";
+                document.querySelector(".sec1").style.width = "100%";
+            }
+            else
+            {
+                document.querySelector(".mobpart").style.display = "none";
                 document.querySelector(".sec1").style.width = "20%";
+            }
                 but.setAttribute("open", "yes");
                 but.style.display = "none";
                 let navb = document.querySelector(".links");
