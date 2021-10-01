@@ -36,20 +36,16 @@
                 </div>
                 <div class = "mobpart" style = "display:none">
                 <div class="aclass">
-                    <a href="#s1" target="_blank"><i class="fa fa-github fa-1.5x"
-                            aria-hidden="true"></i></a>
+                    <a href="#s1" target="_blank">ABOUT ME</a>
                 </div>
                 <div class="aclass">
-                    <a href="#s2" target="_blank"><i class="fa fa-github fa-1.5x"
-                            aria-hidden="true"></i></a>
+                    <a href="#s2" target="_blank">EDUCATION</a>
                 </div>
                 <div class="aclass">
-                    <a href="#s3" target="_blank"><i class="fa fa-github fa-1.5x"
-                            aria-hidden="true"></i></a>
+                    <a href="#s3" target="_blank">SKILLS</a>
                 </div>
                 <div class="aclass">
-                    <a href="#s4" target="_blank"><i class="fa fa-github fa-1.5x"
-                            aria-hidden="true"></i></a>
+                    <a href="#s4" target="_blank">CERTIFICATIONS</a>
                 </div>
             </div>
             </div>
@@ -196,7 +192,11 @@
             document.querySelector(".sec2").style.position = "static";
             document.querySelector(".sec2").style.opacity = "1";
             if(document.documentElement.clientWidth <= 767)
-            document.querySelector("#mobbut").style.display = "block";
+            {
+                document.querySelector("#mobbut").style.display = "block";
+                //document.querySelector("#mobbut").style.position = "sticky";
+                //document.querySelector("#mobbut").style.top = "0";
+            }
             else
             document.querySelector("#butid").style.display = "block";
             let navb = document.querySelector(".links");
@@ -226,7 +226,9 @@
                 /*document.querySelector(".sec1").style.backgroundColor = "black";*/
                 if(document.documentElement.clientWidth <= 767)
             {document.querySelector(".mobpart").style.display = "block";
-                document.querySelector(".sec1").style.width = "100%";
+            //document.querySelector(".mobpart").style.position = "sticky";
+            //document.querySelector(".mobpart").style.top = "0";
+            document.querySelector(".sec1").style.width = "100%";
             }
             else
             {
