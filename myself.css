@@ -362,6 +362,8 @@ html{
     }
     .mobpart{
         display:block;
+        position: sticky;
+        top:0;
     }
     .sec2 .links{
         display: none;
@@ -369,6 +371,8 @@ html{
 
     #mobbut{
         display: block;
+        position: sticky;
+        top:0;
     }
 }
 
@@ -376,6 +380,7 @@ html{
 {
     #mobbut{
         display: none;
+
     }
 }
 .pic_organize a{
