@@ -36,16 +36,20 @@
                 </div>
                 <div class = "mobpart" style = "display:none">
                 <div class="aclass">
-                    <a href="#s1" target="_blank">ABOUT ME</a>
+                    <!--<a href="#s1" target = "_self">ABOUT ME</a>-->
+                    <a onclick="mobilelink('s1')">ABOUT ME</a>
                 </div>
                 <div class="aclass">
-                    <a href="#s2" target="_blank">EDUCATION</a>
+                    <!--<a href="#s2" target = "_self">EDUCATION</a>-->
+                    <a onclick="mobilelink('s2')">EDUCATION</a>
                 </div>
                 <div class="aclass">
-                    <a href="#s3" target="_blank">SKILLS</a>
+                    <!--<a href="#s3" target = "_self">SKILLS</a>-->
+                    <a onclick="mobilelink('s3')">SKILLS</a>
                 </div>
                 <div class="aclass">
-                    <a href="#s4" target="_blank">CERTIFICATIONS</a>
+                    <!--<a href="#s4" target = "_self">CERTIFICATIONS</a>-->
+                    <a onclick="mobilelink('s4')">CERTIFICATIONS</a>
                 </div>
             </div>
             </div>
@@ -185,6 +189,21 @@
     </div>
 
     <script>
+        window.onresize = function()
+        {
+            if(document.documentElement.clientWidth <= 767)
+            {
+                document.querySelector("#butid").style.display = "none";
+                document.querySelector(".mobpart").style.display = "block";
+                document.querySelector("#mobbut").style.display = "block";
+            }
+
+            else
+            {
+                document.querySelector("#mobbut").style.display = "none";
+                document.querySelector("#butid").style.display = "block";
+        }
+    }
         function normal() {
             document.querySelector(".sec1").style.display = "none";
             document.querySelector(".secover").style.zIndex = "0.5";
@@ -202,6 +221,12 @@
             let navb = document.querySelector(".links");
             const as = navb.querySelectorAll("a");//[0].style.width = "25%";
             as.forEach(anch => anch.style.width = "22.5%");
+        }
+
+        function mobilelink(id)
+        {
+            normal();
+            window.location.href = "#" + id;
         }
         function displayall(id) {
             let but = document.querySelector("#" + id);
@@ -229,6 +254,7 @@
             //document.querySelector(".mobpart").style.position = "sticky";
             //document.querySelector(".mobpart").style.top = "0";
             document.querySelector(".sec1").style.width = "100%";
+            //document.querySelector(".sec1").style.
             }
             else
             {
